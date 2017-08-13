@@ -8,6 +8,9 @@
     [TestFixture]
     public class DetectorTests
     {
+        private const int iterationCount = 25000;
+        private const int margin = (int)(iterationCount * (1 - 0.9876));
+
         [Test]
         public void RandomFiftyFiftyTest()
         {
@@ -16,7 +19,6 @@
 
             int count = 0;
 
-            int iterationCount = 1000;
             for (int i = 0; i < iterationCount; ++i)
             {
                 var particle = new Particle(VectorFactory.Create());
@@ -28,7 +30,6 @@
             }
 
             int expected = (int)(iterationCount * 0.50);
-            int margin = (int)(iterationCount * 0.05);
 
             Assert.AreEqual(count, expected, margin);
         }
@@ -41,8 +42,7 @@
             var detector = new Detector(detectorAngle);
 
             int count = 0;
-
-            int iterationCount = 1000;
+            
             for (int i = 0; i < iterationCount; ++i)
             {
                 var particle = new Particle(VectorFactory.Create());
@@ -57,7 +57,6 @@
             }
 
             int expected = (int)(iterationCount * 0.50);
-            int margin = (int)(iterationCount * 0.05);
 
             Assert.AreEqual(expected, count, margin);
         }
@@ -87,8 +86,7 @@
             var detector = new Detector(detectorAngle);
 
             int count = 0;
-
-            int iterationCount = 1000;
+            
             for (int i = 0; i < iterationCount; ++i)
             {
                 Vector3D particleAngle = VectorFactory.Create(180);
@@ -103,7 +101,6 @@
             }
 
             int expected = (int)(iterationCount * 0.75);
-            int margin = (int)(iterationCount * 0.05);
 
             Assert.AreEqual(expected, count, margin);
         }
@@ -115,8 +112,7 @@
             var detector2 = new Detector(VectorFactory.Create(45));
 
             int count = 0;
-
-            int iterationCount = 1000;
+            
             for (int i = 0; i < iterationCount; ++i)
             {
                 var particle1 = new Particle(VectorFactory.Create());
@@ -132,7 +128,6 @@
             }
 
             int expected = (int)(iterationCount * 0.85);
-            int margin = (int)(iterationCount * 0.05);
 
             Assert.AreEqual(expected, count, margin);
         }
@@ -142,7 +137,6 @@
         public void JohnBellTest()
         {
             int count = 0;
-            int iterationCount = 1000;
             var random = new Random(Guid.NewGuid().GetHashCode());
 
             for (int i = 0; i < iterationCount; ++i)
@@ -163,7 +157,6 @@
             }
 
             int expected = (int)(iterationCount * 0.50);
-            int margin = (int)(iterationCount * 0.05);
 
             Assert.AreEqual(expected, count, margin);
         }
