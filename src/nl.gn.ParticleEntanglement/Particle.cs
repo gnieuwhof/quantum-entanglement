@@ -80,7 +80,7 @@
                 {
                     // We're entangled.
                     Vector3D partnerDirection = this.direction;
-
+                    
                     if (!isEmittingPhoton)
                     {
                         // Opposite direction.
@@ -95,6 +95,11 @@
                     this.Partner.Partner = null;
                     this.Partner = null;
                 }
+            }
+
+            if(isEmittingPhoton)
+            {
+                this.direction.Negate();
             }
 
             return isEmittingPhoton;
