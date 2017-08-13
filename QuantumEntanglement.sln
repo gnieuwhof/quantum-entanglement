@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntanglementConsole", "src\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4CB1EAF9-BA43-4583-BB6C-672EA008FF7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nl.gn.ParticleEntanglement", "src\nl.gn.ParticleEntanglement\nl.gn.ParticleEntanglement.csproj", "{5CB28D2E-11BC-4E0C-9991-A91784E34160}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +19,16 @@ Global
 		{701DD1DB-5EE5-486A-9773-EBA7ADE8F76C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{701DD1DB-5EE5-486A-9773-EBA7ADE8F76C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{701DD1DB-5EE5-486A-9773-EBA7ADE8F76C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CB28D2E-11BC-4E0C-9991-A91784E34160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CB28D2E-11BC-4E0C-9991-A91784E34160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CB28D2E-11BC-4E0C-9991-A91784E34160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CB28D2E-11BC-4E0C-9991-A91784E34160}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{701DD1DB-5EE5-486A-9773-EBA7ADE8F76C} = {4CB1EAF9-BA43-4583-BB6C-672EA008FF7F}
+		{5CB28D2E-11BC-4E0C-9991-A91784E34160} = {4CB1EAF9-BA43-4583-BB6C-672EA008FF7F}
 	EndGlobalSection
 EndGlobal
