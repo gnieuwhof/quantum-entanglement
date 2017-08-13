@@ -2,6 +2,7 @@
 {
     using nl.gn.ParticleEntanglement;
     using NUnit.Framework;
+    using System;
     using System.Windows.Media.Media3D;
 
     [TestFixture]
@@ -131,6 +132,37 @@
             }
 
             int expected = (int)(iterationCount * 0.85);
+            int margin = (int)(iterationCount * 0.05);
+
+            Assert.AreEqual(expected, count, margin);
+        }
+
+        [Test]
+        // @see EPR paradox.
+        public void JohnBellTest()
+        {
+            int count = 0;
+            int iterationCount = 1000;
+            var random = new Random(Guid.NewGuid().GetHashCode());
+
+            for (int i = 0; i < iterationCount; ++i)
+            {
+                var particle1 = new Particle(VectorFactory.Create());
+                var particle2 = new Particle(particle1);
+
+                var detector1 = new Detector(VectorFactory.Create(random.Next(3) * 120));
+                var detector2 = new Detector(VectorFactory.Create(random.Next(3) * 120));
+
+                bool up1 = detector1.InDirectionOfDetector(particle1);
+                bool up2 = detector2.InDirectionOfDetector(particle2);
+
+                if (up1 != up2)
+                {
+                    ++count;
+                }
+            }
+
+            int expected = (int)(iterationCount * 0.50);
             int margin = (int)(iterationCount * 0.05);
 
             Assert.AreEqual(expected, count, margin);
